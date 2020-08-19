@@ -1,0 +1,94 @@
+.porfolio-col {
+    display: flex;
+    flex-direction: column;
+    width: 31%;
+    margin: auto;
+    margin-top: 0;
+}
+
+.portfolio-img {
+    width: 100%;
+    margin-top: 30px;
+}
+
+@media screen and (max-width: 1100px) {
+    .porfolio-col {
+        width: 86%;
+    }
+    .portfolio-img {
+        margin-top: 20px;
+    }
+}
+
+.big-img-div {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 12;
+    width: 100%;
+    height: 100%;
+}
+
+.big-pic {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.big-img {
+    max-height: 900px;
+    max-width: 90%;
+    margin-top: 0;
+    margin-left: 20%;
+    z-index: 13;
+    border: white 10px solid;
+    cursor: pointer;
+
+}
+
+.close-b {
+    z-index: 14;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+
+.close-b:hover {
+    color: rgba(0, 0, 0, 0.637);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.thumbnail {
+    max-width: 350px;
+    max-height: 500px;
+    border: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1100px) {
+    .big-img {
+        max-height: 700px;
+        margin-top: 100px;
+        margin-left: 10%;
+    }
+}
+
+.thumbnail-col {
+    width: 30%;
+    height: 1100px;
+    margin-left: 10%;
+    overflow-x: auto;
+}
+
+@media screen and (max-width: 800px) {
+    .big-pic {
+        width: 95%;
+    }
+    .thumbnail-col {
+        position: absolute;
+        visibility: hidden;
+    }
+}

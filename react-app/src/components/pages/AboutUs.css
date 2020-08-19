@@ -1,0 +1,49 @@
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 900px;
+    width: 100%;
+    background-size: 1100px 900px;
+}
+
+@media screen and (max-width: 1100px) {
+    .parallax {
+        height: 600px;
+        width: 100%;
+        background-size: 900px 600px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .parallax {
+        height: 400px;
+        width: 100%;
+        background-size: 400px 300px;
+    }
+}
+
+.par-1 {
+    background-image: url('../../pic/about/about-pic-2.jpg');
+}
+
+.par-2 {
+    background-image: url('../../pic/about/about-pic-01.jpg');
+}
+
+.par-3 {
+    background-image: url('../../pic/about/about-pic-02.jpg');
+}
+
+.par-4 {
+    background-image: url('../../pic/about/about-pic-04.jpg');
+}
+
+.aboutTextDiv {
+    font-size: 20px;
+    text-align: center;
+    padding: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}

@@ -1,0 +1,62 @@
+.part h4:hover {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.line {
+    stroke: rgb(255, 166, 0);
+    stroke-width: 10px;
+}
+
+.-closed {
+    transition: height 0.5s;
+    transition-timing-function: ease-in-out;
+    height: 0;
+}
+
+.-open {
+    transition: height 1.2s, margin-top 1.2s, padding 1.21s;
+    height: 600px;
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    font-size: larger;
+}
+
+.texture-img {
+    height: 200px;
+    width: 200px;
+    margin: 1%;
+    border: white 5px solid;
+}
+
+.-blc-open {
+    visibility: visible;
+    transition: visibility 0.5s;
+    transition-delay: 1s;
+    transition-timing-function: ease-in-out;
+}
+
+.-blc-closed {
+    visibility: hidden;
+}
+
+.list {
+    list-style-type: square;
+}
+
+@media screen and (max-width: 1100px) {
+    .part {
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+    .-open {
+        height: 600px;
+        font-size: medium;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .-open {
+        height: 650px;
+        font-size: smaller;
+    }
+}

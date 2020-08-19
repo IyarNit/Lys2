@@ -1,0 +1,41 @@
+{
+    "name": "react-app",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@trendmicro/react-sidenav": "^0.5.0",
+        "axios": "^0.19.2",
+        "react": "0.0.0-7f28234f8",
+        "react-compare-image": "^3.0.2",
+        "react-dom": "0.0.0-7f28234f8",
+        "react-intl": "^5.4.5",
+        "react-redux": "^7.1.0-rc.1",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "^3.4.3",
+        "react-transition-group": "^4.4.1",
+        "redux": "^4.0.0-rc.1",
+        "styled-components": "^5.1.1"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "startOld": "PORT=8082 react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
+}
