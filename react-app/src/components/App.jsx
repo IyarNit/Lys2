@@ -6,6 +6,7 @@ import AppLinks from './appRouter/AppLinks';
 import logo from '../pic/fox-logo2.png';
 import Footer from './Footer';
 import Form from './Form';
+import "../components/css/modal.css"
 
 import { MyProvider, LOCALES } from '../translation';
 import translate from '../translation/do-translate';
@@ -20,9 +21,45 @@ function App() {
             }
         }, 1000)
     }
+    const checkBrowserLang = () => {
+        const defLang = localStorage.getItem("Lys-Lang")
+        if (defLang === "ru-RU") {
+            setLocale(LOCALES.RUSSIAN)
+        }
+        if (defLang === "uk-UA") {
+            setLocale(LOCALES.UKRAINIAN)
+        }
+        if (defLang === "en-US" || "en-AU" || "en-GB" || "en-IE" || "en-ZA") {
+            localStorage.setItem("Lys-Lang", "en-US")
+            setLocale(LOCALES.ENGLISH)
+        } else {
+            localStorage.setItem("Lys-Lang", "en-US")
+            setLocale(LOCALES.ENGLISH)
+        }
+        const userDefaultLanguage = navigator.language
+        console.log(userDefaultLanguage)
+        if (!defLang) {
+            if (userDefaultLanguage === "ru-RU") {
+                localStorage.setItem("Lys-Lang", "ru-RU")
+                setLocale(LOCALES.RUSSIAN)
+            }
+            if (userDefaultLanguage === "uk-UA") {
+                localStorage.setItem("Lys-Lang", "uk-UA")
+                setLocale(LOCALES.UKRAINIAN)
+            }
+            if (userDefaultLanguage === "en-US" || "en-AU" || "en-GB" || "en-IE" || "en-ZA") {
+                localStorage.setItem("Lys-Lang", "en-US")
+                setLocale(LOCALES.ENGLISH)
+            } else {
+                localStorage.setItem("Lys-Lang", "en-US")
+                setLocale(LOCALES.ENGLISH)
+            }
+        }
+    }
 
     useEffect(() => {
         checkLocation();
+        checkBrowserLang()
     }, []);
 
 
@@ -30,7 +67,24 @@ function App() {
     const [contactForm, setContactForm] = useState(false);
     const [navbar, setNavbarOpen] = useState(false);
 
+    const setLanguage = (e) => {
+        const changeLanguage = e.target.innerHTML
+        localStorage.removeItem("Lys-Lang")
+        if (changeLanguage === "Рус.") {
+            localStorage.setItem("Lys-Lang", "ru-RU")
+            setLocale(LOCALES.RUSSIAN)
+        }
+        if (changeLanguage === "Укр.") {
+            localStorage.setItem("Lys-Lang", "uk-UA")
+            setLocale(LOCALES.UKRAINIAN)
+        }
+        if (changeLanguage === "Eng.") {
+            localStorage.setItem("Lys-Lang", "en-US")
+            setLocale(LOCALES.ENGLISH)
+        }
 
+
+    }
     return (
         <MyProvider locale={locale}>
             <BrowserRouter>
@@ -65,11 +119,11 @@ function App() {
                             <li className="nav-item">
                                 <AppLinks />
                                 <p className="nav-links">
-                                    <button onClick={() => { setLocale(LOCALES.UKRAINIAN) }} className="lang-button">
+                                    <button onClick={setLanguage} className="lang-button">
                                         <p className="lang">Укр.</p></button>/
-                                        <button onClick={() => { setLocale(LOCALES.RUSSIAN) }} className="lang-button">
+                                        <button value="Pyc." onClick={setLanguage} className="lang-button">
                                         <p className="lang">Рус.</p></button>/
-                                        <button onClick={() => { setLocale(LOCALES.ENGLISH) }} className="lang-button">
+                                        <button onClick={setLanguage} className="lang-button">
                                         <p className="lang">Eng.</p></button>
                                     <i className="fas fa-angle-double-right"></i>
                                 </p>
